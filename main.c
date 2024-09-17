@@ -43,21 +43,18 @@ void ipSum(char *a, char *b) {
 	
 	i = 0, j = 0, seg = 0;
 	
-	for (int k = 0; k <= seg; k++) {
-		if (ipArray[seg][i] == ipArray2[seg][i] && ipArray[seg][i] == '\0') {
-			finalArray[seg][i] == '\0';
+	while (ipArray[seg][i] == ipArray2[seg][i]) {
+		if (ipArray[seg][i] == '\0') {
+			finalArray[seg][i] = '\0';
 			seg++;
 			i = 0;
-		} else if (ipArray[seg][i] != ipArray2[seg][i]){
-			loserArray[seg][i] = ipArray[seg][i];
-			i++;
 		} else {
-			finalArray[seg][i] = ipArray[seg][i];
-			i++;
+			finalArray[seg][i++] = ipArray[seg][i];
 		}
 	}
+		
 	for (int k = 0; k <= seg; k++) {
-		printf("final Array %s", finalArray[k]);
+		printf("similar numbers %s\n", finalArray[k]);	
 	}
 }
 
